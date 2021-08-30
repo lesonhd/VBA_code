@@ -1,0 +1,5 @@
+Sub StopAllEvents()
+Application.EnableEvents = False
+' Viết các code VBA khác vào giữa ở đây
+Application.EnableEvents = True
+End Sub

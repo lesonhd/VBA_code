@@ -1,0 +1,258 @@
+Sub rfikhongtai()
+    Dim num_of_rfi As Long
+    Dim num_of_column As Long
+    Dim i As Long, j As Long
+    Dim rfi_khongtai As Object
+    Dim t As Object
+    Dim k As String
+    
+    num_of_column = 5
+    num_of_rfi = Workbooks("data_khongtai.xlsx").Sheets("Sheet1").Cells(Rows.Count, "A").End(xlUp).Row - 1
+    With CreateObject("word.application")
+        .Visible = True
+        
+        For i = 15 To num_of_rfi
+        Set rfi_khongtai = .documents.Open("E:\3.SDWP 1B\7.QC-Construction\Aone\Report\rfi_khongtai.docx")
+        Set t = rfi_khongtai.Content
+            For j = 1 To num_of_column
+               t.Find.Execute _
+               FindText:=Workbooks("data_khongtai.xlsx").Sheets("Sheet1").Cells(1, j).Value, _
+               ReplaceWith:=Workbooks("data_khongtai.xlsx").Sheets("Sheet1").Cells(i + 1, j).Value, _
+               Replace:=wdReplaceAll
+               k = Workbooks("data_khongtai.xlsx").Sheets("Sheet1").Cells(i + 1, 1).Value
+            Next
+            ChangeFileOpenDirectory "E:\3.SDWP 1B\7.QC-Construction\Aone\Report\khong_tai\"
+            rfi_khongtai.SaveAs2 Filename:=k & ".docx"
+        Next
+        .Quit
+    End With
+    Set t = Nothing
+    Set rfi_khongtai = Nothing
+End Sub
+
+Sub reportKhongtai()
+Dim num_of_report As Long
+    Dim num_of_column As Long
+    Dim i As Long, j As Long
+    Dim report_khongtai As Object
+    Dim t As Object
+    Dim k As String
+
+    
+    num_of_column = 5
+    num_of_report = Workbooks("data_khongtai.xlsx").Sheets("Sheet1").Cells(Rows.Count, "A").End(xlUp).Row - 1
+    With CreateObject("word.application")
+        .Visible = True
+        
+        For i = 15 To num_of_report
+        Set report_khongtai = .documents.Open("E:\3.SDWP 1B\7.QC-Construction\Aone\Report\report_khongtai.docx")
+        Set t = report_khongtai.Content
+            For j = 1 To num_of_column
+               t.Find.Execute _
+               FindText:=Workbooks("data_khongtai.xlsx").Sheets("Sheet1").Cells(1, j).Value, _
+               ReplaceWith:=Workbooks("data_khongtai.xlsx").Sheets("Sheet1").Cells(i + 1, j).Value, _
+               Replace:=wdReplaceAll
+               k = Workbooks("data_khongtai.xlsx").Sheets("Sheet1").Cells(i + 1, 2).Value
+
+            Next
+            ChangeFileOpenDirectory "E:\3.SDWP 1B\7.QC-Construction\Aone\Report\khong_tai\"
+            report_khongtai.SaveAs2 Filename:=k & ".docx"
+        Next
+        .Quit
+    End With
+    Set t = Nothing
+    Set report_khongtai = Nothing
+End Sub
+Sub Cotai_rfi()
+    Dim num_of_rfi As Long
+    Dim num_of_column As Long
+    Dim i As Long, j As Long
+    Dim Cotai_rfi As Object
+    Dim t As Object
+    Dim k As String
+    
+    num_of_column = 5
+    num_of_rfi = Workbooks("data_khongtai.xlsx").Sheets("Sheet2").Cells(Rows.Count, "A").End(xlUp).Row - 1
+    With CreateObject("word.application")
+        .Visible = True
+        
+        For i = 1 To num_of_rfi
+        Set Cotai_rfi = .documents.Open("E:\3.SDWP 1B\7.QC-Construction\Aone\Report\cotai_rfi.docx")
+        Set t = Cotai_rfi.Content
+            For j = 1 To num_of_column
+               t.Find.Execute _
+               FindText:=Workbooks("data_khongtai.xlsx").Sheets("Sheet2").Cells(1, j).Value, _
+               ReplaceWith:=Workbooks("data_khongtai.xlsx").Sheets("Sheet2").Cells(i + 1, j).Value, _
+               Replace:=wdReplaceAll
+               k = Workbooks("data_khongtai.xlsx").Sheets("Sheet2").Cells(i + 1, 1).Value
+            Next
+            ChangeFileOpenDirectory "E:\3.SDWP 1B\7.QC-Construction\Aone\Report\co_tai\"
+            Cotai_rfi.SaveAs2 Filename:=k & ".docx"
+        Next
+        .Quit
+    End With
+    Set t = Nothing
+    Set Cotai_rfi = Nothing
+End Sub
+Sub cotai_report()
+Dim num_of_report As Long
+    Dim num_of_column As Long
+    Dim i As Long, j As Long
+    Dim cotai_report As Object
+    Dim t As Object
+    Dim k As String
+
+    
+    num_of_column = 5
+    num_of_report = Workbooks("data_khongtai.xlsx").Sheets("Sheet2").Cells(Rows.Count, "A").End(xlUp).Row - 1
+    With CreateObject("word.application")
+        .Visible = True
+        
+        For i = 1 To num_of_report
+        Set cotai_report = .documents.Open("E:\3.SDWP 1B\7.QC-Construction\Aone\Report\cotai_report.docx")
+        Set t = cotai_report.Content
+            For j = 1 To num_of_column
+               t.Find.Execute _
+               FindText:=Workbooks("data_khongtai.xlsx").Sheets("Sheet2").Cells(1, j).Value, _
+               ReplaceWith:=Workbooks("data_khongtai.xlsx").Sheets("Sheet2").Cells(i + 1, j).Value, _
+               Replace:=wdReplaceAll
+               k = Workbooks("data_khongtai.xlsx").Sheets("Sheet2").Cells(i + 1, 2).Value
+
+            Next
+            ChangeFileOpenDirectory "E:\3.SDWP 1B\7.QC-Construction\Aone\Report\co_tai\"
+            cotai_report.SaveAs2 Filename:=k & ".docx"
+        Next
+        .Quit
+    End With
+    Set t = Nothing
+    Set cotai_report = Nothing
+End Sub
+Sub ld_cotai_rfi()
+    Dim num_of_rfi As Long
+    Dim num_of_column As Long
+    Dim i As Long, j As Long
+    Dim ld_cotai_rfi As Object
+    Dim t As Object
+    Dim k As String
+    
+    num_of_column = 5
+    num_of_rfi = Workbooks("data_khongtai.xlsx").Sheets("Sheet3").Cells(Rows.Count, "A").End(xlUp).Row - 1
+    With CreateObject("word.application")
+        .Visible = True
+        
+        For i = 1 To num_of_rfi
+        Set ld_cotai_rfi = .documents.Open("E:\3.SDWP 1B\7.QC-Construction\Aone\Report\ld_cotai_rfi.docx")
+        Set t = ld_cotai_rfi.Content
+            For j = 1 To num_of_column
+               t.Find.Execute _
+               FindText:=Workbooks("data_khongtai.xlsx").Sheets("Sheet3").Cells(1, j).Value, _
+               ReplaceWith:=Workbooks("data_khongtai.xlsx").Sheets("Sheet3").Cells(i + 1, j).Value, _
+               Replace:=wdReplaceAll
+               k = Workbooks("data_khongtai.xlsx").Sheets("Sheet3").Cells(i + 1, 1).Value
+            Next
+            ChangeFileOpenDirectory "E:\3.SDWP 1B\7.QC-Construction\Aone\Report\ld_cotai\"
+            ld_cotai_rfi.SaveAs2 Filename:=k & ".docx"
+        Next
+        .Quit
+    End With
+    Set t = Nothing
+    Set ld_cotai_rfi = Nothing
+End Sub
+Sub ld_cotai()
+Dim num_of_report As Long
+    Dim num_of_column As Long
+    Dim i As Long, j As Long
+    Dim ld_cotai As Object
+    Dim t As Object
+    Dim k As String
+
+    
+    num_of_column = 5
+    num_of_report = Workbooks("data_khongtai.xlsx").Sheets("Sheet3").Cells(Rows.Count, "A").End(xlUp).Row - 1
+    With CreateObject("word.application")
+        .Visible = True
+        
+        For i = 1 To num_of_report
+        Set ld_cotai = .documents.Open("E:\3.SDWP 1B\7.QC-Construction\Aone\Report\ld_cotai.docx")
+        Set t = ld_cotai.Content
+            For j = 1 To num_of_column
+               t.Find.Execute _
+               FindText:=Workbooks("data_khongtai.xlsx").Sheets("Sheet3").Cells(1, j).Value, _
+               ReplaceWith:=Workbooks("data_khongtai.xlsx").Sheets("Sheet3").Cells(i + 1, j).Value, _
+               Replace:=wdReplaceAll
+               k = Workbooks("data_khongtai.xlsx").Sheets("Sheet3").Cells(i + 1, 2).Value
+
+            Next
+            ChangeFileOpenDirectory "E:\3.SDWP 1B\7.QC-Construction\Aone\Report\ld_cotai\"
+            ld_cotai.SaveAs2 Filename:=k & ".docx"
+        Next
+        .Quit
+    End With
+    Set t = Nothing
+    Set ld_cotai = Nothing
+End Sub
+Sub ld_khongtai_rfi()
+    Dim num_of_rfi As Long
+    Dim num_of_column As Long
+    Dim i As Long, j As Long
+    Dim ld_khongtai_rfi As Object
+    Dim t As Object
+    Dim k As String
+    
+    num_of_column = 5
+    num_of_rfi = Workbooks("data_khongtai.xlsx").Sheets("Sheet4").Cells(Rows.Count, "A").End(xlUp).Row - 1
+    With CreateObject("word.application")
+        .Visible = True
+        
+        For i = 1 To num_of_rfi
+        Set ld_khongtai_rfi = .documents.Open("E:\3.SDWP 1B\7.QC-Construction\Aone\Report\ld_khongtai_rfi.docx")
+        Set t = ld_khongtai_rfi.Content
+            For j = 1 To num_of_column
+               t.Find.Execute _
+               FindText:=Workbooks("data_khongtai.xlsx").Sheets("Sheet4").Cells(1, j).Value, _
+               ReplaceWith:=Workbooks("data_khongtai.xlsx").Sheets("Sheet4").Cells(i + 1, j).Value, _
+               Replace:=wdReplaceAll
+               k = Workbooks("data_khongtai.xlsx").Sheets("Sheet4").Cells(i + 1, 1).Value
+            Next
+            ChangeFileOpenDirectory "E:\3.SDWP 1B\7.QC-Construction\Aone\Report\ld_khongtai\"
+            ld_khongtai_rfi.SaveAs2 Filename:=k & ".docx"
+        Next
+        .Quit
+    End With
+    Set t = Nothing
+    Set ld_khongtai_rfi = Nothing
+End Sub
+Sub ld_khongtai()
+Dim num_of_report As Long
+    Dim num_of_column As Long
+    Dim i As Long, j As Long
+    Dim ld_khongtai As Object
+    Dim t As Object
+    Dim k As String
+
+    
+    num_of_column = 5
+    num_of_report = Workbooks("data_khongtai.xlsx").Sheets("Sheet4").Cells(Rows.Count, "A").End(xlUp).Row - 1
+    With CreateObject("word.application")
+        .Visible = True
+        
+        For i = 1 To num_of_report
+        Set ld_khongtai = .documents.Open("E:\3.SDWP 1B\7.QC-Construction\Aone\Report\ld_khongtai.docx")
+        Set t = ld_khongtai.Content
+            For j = 1 To num_of_column
+               t.Find.Execute _
+               FindText:=Workbooks("data_khongtai.xlsx").Sheets("Sheet4").Cells(1, j).Value, _
+               ReplaceWith:=Workbooks("data_khongtai.xlsx").Sheets("Sheet4").Cells(i + 1, j).Value, _
+               Replace:=wdReplaceAll
+               k = Workbooks("data_khongtai.xlsx").Sheets("Sheet4").Cells(i + 1, 2).Value
+
+            Next
+            ChangeFileOpenDirectory "E:\3.SDWP 1B\7.QC-Construction\Aone\Report\ld_khongtai\"
+            ld_khongtai.SaveAs2 Filename:=k & ".docx"
+        Next
+        .Quit
+    End With
+    Set t = Nothing
+    Set ld_khongtai = Nothing
+End Sub
+

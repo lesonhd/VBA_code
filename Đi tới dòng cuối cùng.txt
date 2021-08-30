@@ -1,0 +1,8 @@
+Sub FindingLastRow()
+Dim wS As Worksheet
+Dim LastRow As Long
+Set wS = ThisWorkbook.Sheets(1)
+'Here we look in Column A
+LastRow = wS.Cells(wS.Rows.Count, "A").End(xlUp).Row 'Nó sẽ đi từ dưới lên trên để tìm dòng cuối cùng chứa dữ liệu
+MsgBox LastRow
+End Sub

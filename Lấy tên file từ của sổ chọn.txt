@@ -1,0 +1,5 @@
+Sub GetFileName_Any()
+    Dim FilePath As String
+    FilePath = Application.GetOpenFilename()
+    MsgBox FilePath
+End Sub

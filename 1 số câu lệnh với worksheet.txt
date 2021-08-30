@@ -1,0 +1,44 @@
+– Một số phương thức và thuộc tính thường dùng: 
+
+.Count: Đếm số worksheets có trong một workbook 
+
+MsgBox Worksheets.Count
+.Activate: Kích hoạt worksheet được chỉ định 
+
+Sheet1.Activate
+.Select: Chọn worksheet được chỉ định 
+
+Sheet1.Select
+Gọi tới đối tượng của worksheet:
+
+.Cells 
+.Range 
+.Rows 
+.Columns
+
+
+Cách 1: Sử dụng worksheet name – Là tên của bảng tính nhìn thấy ở dưới thanh trạng thái (Sheet Tab). 
+
+Sub wsName()
+    Worksheets("Ten sheet 1").Range("A1").Value = "Xin chao!"
+    'Hoac co the viet sheets thay cho worksheets
+    Sheets("Ten sheet 1").Range("A2").Value = "Xin chao!"
+End Sub
+# Cách 2: Sử dụng thứ tự sắp xếp của worksheet ở sheet tab, tính từ trái qua phải, vị trí đầu tiên là 1 
+
+Sub wsIndex()
+    Sheets(1).Range("B1").Value = Sheets(1).Name & "-Vi tri=" & Sheets(1).Index
+    Sheets(2).Range("B1").Value = Sheets(2).Name & "-Vi tri=" & Sheets(2).Index
+End Sub
+# Cách 3: Sử dụng CodeName của worksheet, là tên của worksheet trong VBA 
+
+Sub wsCodeName()
+    Sheet1.Range("B2").Value = Sheets(1).Name
+    Sheet2.Range("B2").Value = Sheets(2).Name
+    Sheet1.Range("C1").Value = Sheet1.CodeName
+    Sheet2.Range("C1").Value = Sheet2.CodeName
+End Sub
+
+
+Thêm 1 worksheets mới
+Worksheets.Add().Name = "StackOveflow"

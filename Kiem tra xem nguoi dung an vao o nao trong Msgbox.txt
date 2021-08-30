@@ -1,0 +1,6 @@
+Sub HeoBasicMessageBox2()
+Dim response As VbMsgBoxResult
+    response = MsgBox("Hoc Excel Online", vbOKCancel)
+    MsgBox response  'Trả về giá trị là số khi người dùng ấn vào ok hoặc cancel
+    
+End Sub

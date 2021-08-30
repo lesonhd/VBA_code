@@ -1,0 +1,10 @@
+Sub Macro1()
+'
+' Macro1 Macro
+'
+
+'
+    Sheets(Array("Sheet1", "Sheet2", "Sheet5")).Select
+    Sheets("Sheet5").Activate
+    Sheets(Array("Sheet1", "Sheet2", "Sheet5")).Copy
+End Sub

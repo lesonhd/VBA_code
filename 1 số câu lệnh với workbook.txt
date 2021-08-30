@@ -1,0 +1,18 @@
+ThisWorkbook.Name: Tên workbook để quản lý tập tin (tên file).
+
+ThisWorkbook.Path: Đường dẫn chứa workbook.
+
+ThisWorkbook.FullName: Tên workbook bao gồm cả đường dẫn chứa nó.
+
+ThisWorkbook.Save: Lưu các thay đổi đã tác động lên workbook.
+
+ThisWorkbook.Close True '(SaveChanges = True): Đóng workbook và lưu các thay đổi đã tác động lên workbook.
+
+ThisWorkbook.Close False '(SaveChanges = False): Đóng workbook và không lưu các thay đổi đã tác động lên workbook.
+
+Workbooks.Open(filepath): Mở workbook mới, với filepath là đường dẫn của file cần mở.
+
+Ví dụ: Workbooks.Open("C:\Users\Administrator\Desktop\Vidu.xlsx")
+ 
+Workbooks.Add: Tạo mới workbook.
+ActiveWorkbook.CodeName: Tên workbook trong VBA.

@@ -1,0 +1,174 @@
+Sub paint_report()
+ Dim i As Integer
+ Dim j As Integer
+ Dim k As Integer
+ Dim form_rp As String
+ Dim duong_dan As Variant
+ Dim Fname As String
+ 
+ 
+Application.ScreenUpdating = False
+Application.DisplayAlerts = False
+
+' chon so bao cao bat dau va ket thuc
+j = Application.InputBox("Nhap so bao cao bat dau", , , , , , 1) + 4
+k = Application.InputBox("Nhap so bao cao ket thuc", , , , , , , 1) + 4
+' Chon form mau
+MsgBox "Chon file form mau"
+form_rp = Application.GetOpenFilename("Excel file, *.xls?")
+' Chon noi luu file
+MsgBox " Chon noi luu file"
+Application.FileDialog(msoFileDialogFolderPicker).Show  ' hien cua so chon file
+duong_dan = Application.FileDialog(msoFileDialogFolderPicker).SelectedItems(1) & "\"    ' lay link noi luu file
+
+
+ 
+    For i = j To k
+   Workbooks.Open form_rp
+    If Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 60) = 3 Then
+     ' lop 1
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("D5").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 4) 'w.o
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("F5").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 2)   'dcsm
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("B7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 6)   'line no
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("F7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 5)   ' dwg
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("I7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 3)   ' unit
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("I6").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 16)   ' date
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("C13").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 17)   ' humidity
+             Workbooks("Paint_rp.xlsx").Sheets(1).Range("C14").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 18)   ' bulm
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("C15").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 19) ' steel temp
+               Workbooks("Paint_rp.xlsx").Sheets(1).Range("C16").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 20) ' dew
+               Workbooks("Paint_rp.xlsx").Sheets(1).Range("B26").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 11) ' name of coat
+               Workbooks("Paint_rp.xlsx").Sheets(1).Range("G25").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 12) ' thinner
+               Workbooks("Paint_rp.xlsx").Sheets(1).Range("B27").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 14) ' coluor
+            Workbooks("Paint_rp.xlsx").Sheets(1).Range("I25").Value = 1
+             Workbooks("Paint_rp.xlsx").Sheets(1).Range("J25").Value = "st"
+               Workbooks("Paint_rp.xlsx").Sheets(1).Range("K27").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 13) ' bath
+               Workbooks("Paint_rp.xlsx").Sheets(1).Range("I26").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 15) ' Ral
+                Workbooks("Paint_rp.xlsx").Sheets(1).Range("B31").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 21) ' diem do
+            Workbooks("Paint_rp.xlsx").Sheets(1).Range("B32").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 22) ' diem do
+            Workbooks("Paint_rp.xlsx").Sheets(1).Range("B33").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 23) ' diem do
+             Workbooks("Paint_rp.xlsx").Sheets(1).Range("B34").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 24) ' diem do
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("C30").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 25) ' diem do
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("B30").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 26) ' diem do
+              
+    ' lop 2
+            Workbooks("Paint_rp.xlsx").Sheets(2).Range("D5").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 4) 'w.o
+              Workbooks("Paint_rp.xlsx").Sheets(2).Range("F5").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 2)   'dcsm
+              Workbooks("Paint_rp.xlsx").Sheets(2).Range("B7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 6)   'line no
+              Workbooks("Paint_rp.xlsx").Sheets(2).Range("F7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 5)   ' dwg
+               Workbooks("Paint_rp.xlsx").Sheets(2).Range("I7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 3)   ' unit
+              Workbooks("Paint_rp.xlsx").Sheets(2).Range("I6").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 32)   ' date
+              Workbooks("Paint_rp.xlsx").Sheets(2).Range("C13").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 33)   ' humidity
+             Workbooks("Paint_rp.xlsx").Sheets(2).Range("C14").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 34)   ' bulm
+              Workbooks("Paint_rp.xlsx").Sheets(2).Range("C15").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 35) ' steel temp
+               Workbooks("Paint_rp.xlsx").Sheets(2).Range("C16").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 36) ' dew
+               Workbooks("Paint_rp.xlsx").Sheets(2).Range("B26").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 27) ' name of coat
+               Workbooks("Paint_rp.xlsx").Sheets(2).Range("G25").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 28) ' thinner
+               Workbooks("Paint_rp.xlsx").Sheets(2).Range("B27").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 30) ' coluor
+            Workbooks("Paint_rp.xlsx").Sheets(2).Range("I25").Value = 2
+            Workbooks("Paint_rp.xlsx").Sheets(2).Range("J25").Value = "nd"
+               Workbooks("Paint_rp.xlsx").Sheets(2).Range("K27").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 29) ' bath
+                Workbooks("Paint_rp.xlsx").Sheets(2).Range("I26").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 31) ' Ral
+                Workbooks("Paint_rp.xlsx").Sheets(2).Range("B30").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 37) ' diem do
+                Workbooks("Paint_rp.xlsx").Sheets(2).Range("B31").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 38) ' diem do
+            Workbooks("Paint_rp.xlsx").Sheets(2).Range("B32").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 39) ' diem do
+            Workbooks("Paint_rp.xlsx").Sheets(2).Range("B33").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 40) ' diem do
+             Workbooks("Paint_rp.xlsx").Sheets(2).Range("B34").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 41) ' diem do
+              Workbooks("Paint_rp.xlsx").Sheets(2).Range("C30").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 42) ' diem do
+   ' lop 3
+            Workbooks("Paint_rp.xlsx").Sheets(3).Range("D5").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 4) 'w.o
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("F5").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 2)   'dcsm
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("B7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 6)   'line no
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("F7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 5)   ' dwg
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("I7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 3)   ' unit
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("I6").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 48)   ' date
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("C13").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 49)   ' humidity
+             Workbooks("Paint_rp.xlsx").Sheets(3).Range("C14").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 50)   ' bulm
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("C15").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 51) ' steel temp
+               Workbooks("Paint_rp.xlsx").Sheets(3).Range("C16").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 52) ' dew
+               Workbooks("Paint_rp.xlsx").Sheets(3).Range("B26").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 43) ' name of coat
+               Workbooks("Paint_rp.xlsx").Sheets(3).Range("G25").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 44) ' thinner
+               Workbooks("Paint_rp.xlsx").Sheets(3).Range("B27").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 47) ' coluor
+            Workbooks("Paint_rp.xlsx").Sheets(3).Range("I25").Value = 3
+            Workbooks("Paint_rp.xlsx").Sheets(3).Range("J25").Value = "rd"
+               Workbooks("Paint_rp.xlsx").Sheets(3).Range("K27").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 45) ' bath
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("I26").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 46) ' ral
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("B30").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 53) ' diem do
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("B31").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 54) ' diem do
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("B32").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 55) ' diem do
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("B33").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 56) ' diem do
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("B34").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 57) ' diem do
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("C30").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 58) ' diem do
+        
+    Else
+    ' lop 1
+            Workbooks("Paint_rp.xlsx").Sheets(1).Range("D5").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 4) 'w.o
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("F5").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 2)   'dcsm
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("B7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 6)   'line no
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("F7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 5)   ' dwg
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("I7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 3)   ' unit
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("I6").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 16)   ' date
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("C13").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 17)   ' humidity
+             Workbooks("Paint_rp.xlsx").Sheets(1).Range("C14").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 18)   ' bulm
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("C15").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 19) ' steel temp
+               Workbooks("Paint_rp.xlsx").Sheets(1).Range("C16").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 20) ' dew
+               Workbooks("Paint_rp.xlsx").Sheets(1).Range("B26").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 11) ' name of coat
+               Workbooks("Paint_rp.xlsx").Sheets(1).Range("G25").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 12) ' thinner
+               Workbooks("Paint_rp.xlsx").Sheets(1).Range("B27").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 14) ' coluor
+            Workbooks("Paint_rp.xlsx").Sheets(1).Range("I25").Value = 1
+             Workbooks("Paint_rp.xlsx").Sheets(1).Range("J25").Value = "st"
+               Workbooks("Paint_rp.xlsx").Sheets(1).Range("K27").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 13) ' bath
+               Workbooks("Paint_rp.xlsx").Sheets(1).Range("I26").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 15) ' Ral
+                Workbooks("Paint_rp.xlsx").Sheets(1).Range("B31").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 21) ' diem do
+            Workbooks("Paint_rp.xlsx").Sheets(1).Range("B32").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 22) ' diem do
+            Workbooks("Paint_rp.xlsx").Sheets(1).Range("B33").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 23) ' diem do
+             Workbooks("Paint_rp.xlsx").Sheets(1).Range("B34").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 24) ' diem do
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("C30").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 25) ' diem do
+              Workbooks("Paint_rp.xlsx").Sheets(1).Range("B30").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 26) ' diem do
+              
+              
+      ' lop 3
+            Workbooks("Paint_rp.xlsx").Sheets(3).Range("D5").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 4) 'w.o
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("F5").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 2)   'dcsm
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("B7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 6)   'line no
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("F7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 5)   ' dwg
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("I7").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 3)   ' unit
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("I6").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 48)   ' date
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("C13").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 49)   ' humidity
+             Workbooks("Paint_rp.xlsx").Sheets(3).Range("C14").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 50)   ' bulm
+              Workbooks("Paint_rp.xlsx").Sheets(3).Range("C15").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 51) ' steel temp
+               Workbooks("Paint_rp.xlsx").Sheets(3).Range("C16").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 52) ' dew
+               Workbooks("Paint_rp.xlsx").Sheets(3).Range("B26").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 43) ' name of coat
+               Workbooks("Paint_rp.xlsx").Sheets(3).Range("G25").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 44) ' thinner
+               Workbooks("Paint_rp.xlsx").Sheets(3).Range("B27").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 47) ' coluor
+            Workbooks("Paint_rp.xlsx").Sheets(3).Range("I25").Value = 2
+            Workbooks("Paint_rp.xlsx").Sheets(3).Range("J25").Value = "nd"
+               Workbooks("Paint_rp.xlsx").Sheets(3).Range("K27").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 45) ' bath
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("I26").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 46) ' ral
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("B30").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 53) ' diem do
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("B31").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 54) ' diem do
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("B32").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 55) ' diem do
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("B33").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 56) ' diem do
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("B34").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 57) ' diem do
+                Workbooks("Paint_rp.xlsx").Sheets(3).Range("C30").Value = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 58) ' diem do
+            
+       ' xoa sheet 2
+       Windows("Paint_rp.xlsx").Activate
+              Sheets("2").Select
+    ActiveWindow.SelectedSheets.Delete
+    
+
+  End If
+
+   
+ ' Save thanh file moi
+  Fname = Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 3).Value & "-" & Workbooks("Paint_data.xlsm").Sheets(1).Cells(i, 2).Value
+        Windows("Paint_rp.xlsx").Activate
+        ActiveWorkbook.SaveAs duong_dan & Fname & ".xlsx"
+        ActiveWorkbook.Close
+     Next i
+  
+Application.ScreenUpdating = True
+Application.DisplayAlerts = True
+' in neu can : ActiveWorkbook.Sheets(1).PrintOut preview = flase
+End Sub

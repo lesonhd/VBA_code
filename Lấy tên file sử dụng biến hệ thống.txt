@@ -1,0 +1,28 @@
+Get file name:
+Sub GetFileName()
+Dim fso as Scripting.FileSystemObject
+Set fso = CreateObject("Scripting.FileSystemObject")
+MsgBox fso.GetFileName("c:\Documents and Settings\Makro.txt")
+End Sub
+Result: Makro.txt
+Get base name:
+Sub GetBaseName()
+Dim fso as Scripting.FileSystemObject
+Set fso = CreateObject("Scripting.FileSystemObject")
+MsgBox fso.GetBaseName("c:\Documents and Settings\Makro.txt")
+End Sub
+Result: Makro
+Get extension name:
+Sub GetExtensionName()
+Dim fso as Scripting.FileSystemObject
+Set fso = CreateObject("Scripting.FileSystemObject")
+MsgBox fso.GetExtensionName("c:\Documents and Settings\Makro.txt")
+End Sub
+Result: txt
+Get drive name:
+Sub GetDriveName()
+Dim fso as Scripting.FileSystemObject
+Set fso = CreateObject("Scripting.FileSystemObject")
+MsgBox fso.GetDriveName("c:\Documents and Settings\Makro.txt")
+End Sub
+Result: c:

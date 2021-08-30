@@ -1,0 +1,7 @@
+Sub EmptyText()
+Dim strWords As String
+strWords = "Cats"
+MsgBox strWords
+strWords = vbNullString
+MsgBox strWords
+End Sub

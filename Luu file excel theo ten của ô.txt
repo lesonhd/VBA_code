@@ -1,0 +1,12 @@
+Sub Macro3()
+'
+' Macro3 Macro
+'
+
+'
+Dim t As String
+t = ActiveWorkbook.Sheets("Sheet1").Cells(5, 4).Value
+
+    ActiveWorkbook.SaveAs Filename:="D:\Study\excel\" & t & ".xlsx", FileFormat:= _
+        xlOpenXMLWorkbook, CreateBackup:=False
+End Sub

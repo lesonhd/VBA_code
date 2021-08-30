@@ -1,0 +1,5 @@
+Sub NoCalculations()
+Application.Calculation = xlCalculationManual
+' Viết các code VBA khác vào giữa ở đây
+Application.Calculation = xlCalculationAutomatic
+End Sub

@@ -1,0 +1,5 @@
+Sub NoScreenRefresh()
+Application.ScreenUpdating = False
+' Viết các code VBA khác vào giữa ở đây
+Application.ScreenUpdating = True
+End Sub

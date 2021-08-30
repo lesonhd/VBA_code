@@ -1,0 +1,16 @@
+Sub kiemtraso()
+Sheets("sheet3").Activate
+Dim Cell As Range
+Range("A1:D7").Select
+For Each Cell In Selection.Cells
+If Cell = 1 Then
+With Cell.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .Color = 65535
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+End With
+End If
+Next
+End Sub

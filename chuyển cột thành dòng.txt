@@ -1,0 +1,12 @@
+Sub TransposeRangeValues()
+Dim TmpArray() As Variant
+Dim FromRange As Range
+Dim ToRange As Range
+Set FromRange = Sheets(1).Range("a1:a12") 'Worksheets(1).Range("a1:p1")
+Set ToRange = ThisWorkbook.Sheets(1).Range("a1")
+'ThisWorkbook.Sheets("Sheet1").Range("a1")
+TmpArray = Application.Transpose(FromRange.Value)
+FromRange.Clear
+
+ToRange.Resize(FromRange.Columns.Count, FromRange.Rows.Count).Value2 = TmpArray
+End Sub

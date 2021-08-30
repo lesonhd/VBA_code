@@ -1,0 +1,35 @@
+Sub cover()
+Application.ScreenUpdating = False
+' Make report
+Dim i As Integer
+Dim j As Integer
+Dim k As Integer
+Dim t As String
+Dim cover_form As Object
+
+
+Workbooks("data_khongtai.xlsx").Sheets("Sheet1").Activate
+For k = 1 To 14
+j = 15
+    For i = 1 To 50
+
+    Set cover_form = Workbooks.Open("E:\3.SDWP 1B\7.QC-Construction\Aone\Report\cover_form.xlsx")
+            If Workbooks("data_khongtai.xlsx").Sheets("Sheet1").Cells(i, 7) = Workbooks("data_khongtai.xlsx").Sheets("Name").Cells(k, 1) Then
+            Workbooks("cover_form.xlsx").Sheets("cover").Cells(j, 12).Value = Workbooks("data_khongtai.xlsx").Sheets("Sheet1").Cells(i, 2)
+            j = j + 1
+            End If
+
+    Next i
+
+Workbooks("cover_form.xlsx").Sheets("cover").Activate
+t = Workbooks("data_khongtai.xlsx").Sheets("Name").Cells(k, 1).Value
+ChDir "E:\3.SDWP 1B\7.QC-Construction\Aone\Report\khong_tai"
+    ActiveWorkbook.SaveAs Filename:= _
+        "E:\3.SDWP 1B\7.QC-Construction\Aone\Report\khong_tai\" & t & ".xlsx", FileFormat _
+        :=xlOpenXMLWorkbook, CreateBackup:=False
+ActiveWorkbook.Close
+Next k
+
+Workbooks("data_khongtai.xlsx").Sheets("Sheet1").Activate
+Application.ScreenUpdating = True
+End Sub

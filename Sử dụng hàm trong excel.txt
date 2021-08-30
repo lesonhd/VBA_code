@@ -1,0 +1,2 @@
+Application.WorksheetFunction.Formula
+Với Formula là một hàm trong bảng tính (sum, countA, Match…)
